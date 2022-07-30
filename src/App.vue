@@ -48,7 +48,7 @@ export default {
       });
     },
     handleDelete: function (payload) {
-      this.$store.dispatch("deleteSong", payload);
+      db.collection("songs").doc(payload.id).delete();
     },
   },
   mounted() {
